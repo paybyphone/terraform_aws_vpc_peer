@@ -1,4 +1,4 @@
-// module paybyphone-vpcpeer
+// module terraform_aws_vpc_peer
 
 // The provider alias for the peer requester.
 provider "aws" {

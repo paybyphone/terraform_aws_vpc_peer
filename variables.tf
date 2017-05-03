@@ -1,4 +1,4 @@
-// variables.tf provides the parameters to the VPC peering module.
+// module terraform_aws_vpc_peer
 
 // The path to the project in VCS.
 variable "project_path" {

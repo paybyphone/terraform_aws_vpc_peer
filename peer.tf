@@ -1,4 +1,4 @@
-// main.tf provides the resources for the VPC peering module.
+// module terraform_aws_vpc_peer
 
 // vpc_peer provides the VPC peering connection resource.
 resource "aws_vpc_peering_connection" "vpc_peer" {

@@ -1,4 +1,4 @@
-// outputs.tf defines the outputs for the VPC peering module.
+// module terraform_aws_vpc_peer
 
 // The VPC peer ID.
 output "vpc_peer_id" {

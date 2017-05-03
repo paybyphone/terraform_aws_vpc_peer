@@ -1,6 +1,6 @@
 /**
  *
- * # paybyphone-vpcpeer
+ * # terraform_aws_vpc_peer
  * 
  * This is a Terraform module to create a VPC peering between two VPCs. By
  * default, this module will set up the peer between VPCs within the same
@@ -37,7 +37,7 @@
  *     
  *     // vpc_peer provides the VPC peer between our two VPCs.
  *     module "vpc_peer" {
- *       source                  = "../../"
+ *       source                  = "github.com/paybyphone/terraform_aws_vpc_peer?ref=VERSION""
  *       owner_route_table_count = 1
  *       owner_route_table_ids   = ["${module.vpc1.public_route_table_id}"]
  *       owner_subnet_count      = "${length(var.owner_subnet_address)}"
