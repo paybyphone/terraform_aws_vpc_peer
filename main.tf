@@ -59,5 +59,15 @@
  * [aws-runas](https://github.com/vancluever/aws-runas), so you may need to
  * adjust the example to fit your specific toolchain.
  *
+ * ## Removing the Peer from Configuration
+ *
+ * Special considerations need to be taken when removing this resource from a
+ * Terraform configuration due to some current known issues with how Terraform
+ * handles provider aliases embedded in modules. For more details and
+ * instructions on how to remove this module from config, see
+ * [here](https://github.com/hashicorp/terraform/issues/1819#issuecomment-261316458).
+ * Note that this only applies to configurations that are being fully destroyed
+ * - `terraform destroy` will work as expected.
+ *
  */
 
