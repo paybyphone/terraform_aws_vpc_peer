@@ -1,0 +1,5 @@
+*.log
+.terraform
+terraform.tfstate*
+example/multi-account/vars/peering_connection*.tfvars
+example/multi-account/state/*
