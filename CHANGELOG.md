@@ -1,3 +1,9 @@
+## 0.3.0
+
+Public OSS release, all comma-separated variables converted to lists, CIDR
+blocks are now discovered via subnet IDs, and the module now supports multiple
+peers. Docs are also now generated via `terraform-docs.`
+
 ## v0.2.0
 
 The `owner_route_table_id` and `peer_route_table_id` variables are now
