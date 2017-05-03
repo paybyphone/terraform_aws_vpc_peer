@@ -1,3 +1,7 @@
+## 0.3.1-pre
+
+Bumped version for dev.
+
 ## 0.3.0
 
 Public OSS release, all comma-separated variables converted to lists, CIDR
