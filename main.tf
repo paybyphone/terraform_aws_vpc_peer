@@ -66,8 +66,8 @@
  * handles provider aliases embedded in modules. For more details and
  * instructions on how to remove this module from config, see
  * [here](https://github.com/hashicorp/terraform/issues/1819#issuecomment-261316458).
- * Note that this only applies to configurations that are being fully destroyed
- * - `terraform destroy` will work as expected.
+ * Note that this only applies to configurations that are being fully destroyed.
+ * `terraform destroy` will work as expected.
  *
  */
 
