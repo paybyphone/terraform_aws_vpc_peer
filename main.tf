@@ -37,7 +37,7 @@
  *     
  *     // vpc_peer provides the VPC peer between our two VPCs.
  *     module "vpc_peer" {
- *       source                  = "github.com/paybyphone/terraform_aws_vpc_peer?ref=VERSION""
+ *       source                  = "github.com/paybyphone/terraform_aws_vpc_peer?ref=VERSION"
  *       owner_route_table_count = 1
  *       owner_route_table_ids   = ["${module.vpc1.public_route_table_id}"]
  *       owner_subnet_count      = "${length(var.owner_subnet_address)}"
