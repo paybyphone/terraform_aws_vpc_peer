@@ -72,22 +72,24 @@ Note that this only applies to configurations that are being fully destroyed.
 
 ## Inputs
 
-| Name | Description | Default | Required |
-|------|-------------|:-----:|:-----:|
-| project_path | The path to the project in VCS. | - | yes |
-| owner_vpc_id | The VPC ID of the VPC that owns the peer. | - | yes |
-| peer_vpc_id | The VPC ID of the VPC to peer to. | - | yes |
-| peer_account_id | The account ID of the peer VPC. If this is supplied, `peer_role_arn` and `requester_role_arn` should be supplied as well to ensure correct connectivity to both VPCs to automatically request and accept the peer. | `` | no |
-| peer_role_arn | The role ARN of the peer VPC. If this is supplied, `peer_account_id` and `requester_role_arn` should be supplied as well to ensure correct connectivity to both VPCs to automatically request and accept the peer. | `` | no |
-| requester_role_arn | The role ARN of the requester VPC. If this is supplied, `peer_account_id` and `peer_role_arn` should be supplied as well to ensure correct connectivity to both VPCs to automatically request and accept the peer. | `` | no |
-| owner_subnet_count | The number of owner subnets to expect.<br><br>This value cannot be computed by the time the module is processed or else you will get an error. | - | yes |
-| owner_subnet_ids | The subnet IDs on the owner end to route to the peer. | - | yes |
-| peer_subnet_count | The number of peer subnets to expect.<br><br>This value cannot be computed by the time the module is processed or else you will get an error. | - | yes |
-| peer_subnet_ids | The subnet IDs on the peer end to route to the owner. | - | yes |
-| owner_route_table_count | The number of owner route tables to expect.<br><br>This value cannot be computed by the time the module is processed or else you will get an error. | - | yes |
-| owner_route_table_ids | The route table IDs on the owner end to add the peer routes to. | - | yes |
-| peer_route_table_count | The number of peer route tables to expect.<br><br>This value cannot be computed by the time the module is processed or else you will get an error. | - | yes |
-| peer_route_table_ids | The route table IDs on the peer end to add the peer routes to. | - | yes |
+| Name | Description | Type | Default | Required |
+|------|-------------|:----:|:-----:|:-----:|
+| allow_owner_peer_dns_resolution | Allows clients in the owner VPC to resolve DNS hostnames as if they those queries were being made in the peer VPC (ie: RDS instance hostnames will resolve as local addresses). This option is generally only useful for AWS-managed DNS resources only. | string | `false` | no |
+| allow_peer_owner_dns_resolution | Allows clients in the peer VPC to resolve DNS hostnames as if they those queries were being made in the owner VPC (ie: RDS instance hostnames will resolve as local addresses). This option is generally only useful for AWS-managed DNS resources only. | string | `false` | no |
+| owner_route_table_count | The number of owner route tables to expect.<br><br>This value cannot be computed by the time the module is processed or else you will get an error. | string | - | yes |
+| owner_route_table_ids | The route table IDs on the owner end to add the peer routes to. | list | - | yes |
+| owner_subnet_count | The number of owner subnets to expect.<br><br>This value cannot be computed by the time the module is processed or else you will get an error. | string | - | yes |
+| owner_subnet_ids | The subnet IDs on the owner end to route to the peer. | list | - | yes |
+| owner_vpc_id | The VPC ID of the VPC that owns the peer. | string | - | yes |
+| peer_account_id | The account ID of the peer VPC. If this is supplied, `peer_role_arn` and `requester_role_arn` should be supplied as well to ensure correct connectivity to both VPCs to automatically request and accept the peer. | string | `` | no |
+| peer_role_arn | The role ARN of the peer VPC. If this is supplied, `peer_account_id` and `requester_role_arn` should be supplied as well to ensure correct connectivity to both VPCs to automatically request and accept the peer. | string | `` | no |
+| peer_route_table_count | The number of peer route tables to expect.<br><br>This value cannot be computed by the time the module is processed or else you will get an error. | string | - | yes |
+| peer_route_table_ids | The route table IDs on the peer end to add the peer routes to. | list | - | yes |
+| peer_subnet_count | The number of peer subnets to expect.<br><br>This value cannot be computed by the time the module is processed or else you will get an error. | string | - | yes |
+| peer_subnet_ids | The subnet IDs on the peer end to route to the owner. | list | - | yes |
+| peer_vpc_id | The VPC ID of the VPC to peer to. | string | - | yes |
+| project_path | The path to the project in VCS. | string | - | yes |
+| requester_role_arn | The role ARN of the requester VPC. If this is supplied, `peer_account_id` and `peer_role_arn` should be supplied as well to ensure correct connectivity to both VPCs to automatically request and accept the peer. | string | `` | no |
 
 ## Outputs
 
