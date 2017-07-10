@@ -90,3 +90,21 @@ variable "peer_route_table_count" {
 variable "peer_route_table_ids" {
   type = "list"
 }
+
+// Allows clients in the peer VPC to resolve DNS hostnames as if they those
+// queries were being made in the owner VPC (ie: RDS instance hostnames will
+// resolve as local addresses). This option is generally only useful for
+// AWS-managed DNS resources only.
+variable "allow_peer_owner_dns_resolution" {
+  type    = "string"
+  default = "false"
+}
+
+// Allows clients in the owner VPC to resolve DNS hostnames as if they those
+// queries were being made in the peer VPC (ie: RDS instance hostnames will
+// resolve as local addresses). This option is generally only useful for
+// AWS-managed DNS resources only.
+variable "allow_owner_peer_dns_resolution" {
+  type    = "string"
+  default = "false"
+}

@@ -8,6 +8,14 @@ resource "aws_vpc_peering_connection" "vpc_peer" {
   vpc_id        = "${var.owner_vpc_id}"
   auto_accept   = "${var.peer_account_id == "" ? "true" : "false" }"
 
+  requester {
+    allow_remote_vpc_dns_resolution = "${var.allow_peer_owner_dns_resolution}"
+  }
+
+  accepter {
+    allow_remote_vpc_dns_resolution = "${var.allow_owner_peer_dns_resolution}"
+  }
+
   tags {
     project_path = "${var.project_path}"
   }

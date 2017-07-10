@@ -27,3 +27,17 @@ variable "peer_subnet_address" {
   type    = "list"
   default = ["10.0.2.0/25", "10.0.2.128/25", "10.0.3.0/25", "10.0.3.128/25"]
 }
+
+// Allow DNS queries from the peer VPC to resources in the owner VPC to look up
+// as if they were made in the owner VPC and give local addresses.
+variable "allow_peer_owner_dns_resolution" {
+  type    = "string"
+  default = "true"
+}
+
+// Allow DNS queries from the owner VPC to resources in the peer VPC to look up
+// as if they were made in the peer VPC and give local addresses.
+variable "allow_owner_peer_dns_resolution" {
+  type    = "string"
+  default = "true"
+}
